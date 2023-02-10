@@ -1,7 +1,7 @@
-# run npm test on github actions on main branch push
-name: Test
+# run tests on github actions on pull request against master
+name: Test on PR
 on:
-  push:
+  pull_request:
     branches:
       - master
 jobs:
@@ -14,3 +14,5 @@ jobs:
           node-version: '18.13.0'
       - run: npm ci
       - run: npm test
+
+
